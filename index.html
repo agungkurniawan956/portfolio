@@ -14,7 +14,11 @@
   </head>
   <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg sticky-top" data-bs-theme="dark" style="background-color: #322acc;">
+    <nav
+      class="navbar navbar-expand-lg sticky-top"
+      data-bs-theme="dark"
+      style="background-color: #322acc"
+    >
       <div class="container">
         <a class="navbar-brand" href="#">Agung Kurniawan</a>
         <button
@@ -159,25 +163,65 @@
         <div class="container my-5">
           <h1 class="text-center">Contact Me</h1>
           <div class="row justify-content-center">
+            <div class="row justify-content-center">
+              <div
+                class="alert alert-success alert-dismissible fade show col-lg-6 d-none contact-alert"
+                role="alert"
+              >
+                Pesan berhasil terkirim <strong>Terima Kasih!</strong>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="alert"
+                  aria-label="Close"
+                ></button>
+              </div>
+            </div>
+
             <div class="card col-lg-6">
-              <form class="p-3">
+              <form class="p-3" name="contact-form">
                 <div class="mb-3">
                   <label for="name" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="name" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="nama"
+                    id="name"
+                  />
                 </div>
                 <div class="mb-3">
                   <label for="email" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="email" />
+                  <input
+                    type="email"
+                    class="form-control"
+                    name="email"
+                    id="email"
+                  />
                 </div>
                 <div class="mb-3">
                   <label for="message" class="form-label">Message</label>
                   <textarea
                     class="form-control"
                     id="message"
+                    name="pesan"
                     rows="3"
                   ></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary btn-kirim">
+                  Submit
+                </button>
+                <button
+                  class="btn btn-primary d-none btn-loading"
+                  type="button"
+                  disabled
+                >
+                  <span
+                    class="spinner-border spinner-border-sm"
+                    role="status"
+                    aria-hidden="true"
+                  ></span>
+                  Loading...
+                </button>
               </form>
             </div>
           </div>
@@ -187,7 +231,10 @@
 
       <!-- Footer -->
       <footer class="text-white p-3 text-center">
-        <p>Copyright © 2023 Created By <a href="" class="fw-bold">@Agung Kurniawan</a></p>
+        <p>
+          Copyright © 2023 Created By
+          <a href="" class="fw-bold">@Agung Kurniawan</a>
+        </p>
       </footer>
       <!-- End Footer -->
     </main>
@@ -197,5 +244,31 @@
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      const scriptURL =
+        'https://script.google.com/macros/s/AKfycbxi-E7yrWJnWMPw8lMOIzpukOK5YufA0N0C2mMIc1W1CEL2o8YBoDIVXJ-x6TKPqnSNfA/exec';
+      const form = document.forms['contact-form'];
+      const btnLoading = document.querySelector('.btn-loading');
+      const btnKirim = document.querySelector('.btn-kirim');
+      const contactAlert = document.querySelector('.contact-alert');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        btnLoading.classList.toggle('d-none');
+        btnKirim.classList.toggle('d-none');
+
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+          .then((response) => {
+            btnLoading.classList.toggle('d-none');
+            btnKirim.classList.toggle('d-none');
+            contactAlert.classList.toggle('d-none');
+            form.reset();
+            console.log('Success!', response);
+          })
+          .catch((error) => console.error('Error!', error.message));
+      });
+    </script>
   </body>
 </html>
