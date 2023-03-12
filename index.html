@@ -16,7 +16,7 @@
   <body>
     <!-- navbar -->
     <nav
-      class="navbar navbar-expand-lg sticky-top shadow"
+      class="navbar navbar-expand-lg sticky-top shadow rounded-bottom"
       data-bs-theme="dark"
       style="background-color: #322acc"
     >
@@ -56,13 +56,13 @@
                   src="/img/agung1.jpeg"
                   class="rounded-circle img-thumbnail"
                   width="200"
-                  alt=""
+                  alt="Agung Kurniawan"
                 />
               </div>
             </div>
             <div class="col-lg-6 align-self-end my-auto">
-              <h1 class="name"><u>Agung Kurniawan</u></h1>
-              <h6>Web Development | Administration</h6>
+              <h1 class="myname"><u>Agung Kurniawan</u></h1>
+              <h6 class="profesi">Web Development | Administration</h6>
               <p><a href=""></a></p>
             </div>
           </div>
@@ -73,18 +73,10 @@
       <!-- About me -->
       <section id="about">
         <div class="container about text-center">
-          <div class="row justify-content-center fade-up">
+          <div class="row justify-content-center">
             <div class="col-lg-8">
-              <h2>About Me</h2>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit
-                mollitia sit in, asperiores temporibus, iste eos quibusdam eum
-                explicabo suscipit enim molestias minus dolorum placeat tenetur
-                quaerat facere nostrum doloribus reprehenderit cum iure facilis.
-                Alias possimus tempore porro eos qui repudiandae. In consequatur
-                labore explicabo. Optio sint neque saepe dicta omnis, debitis
-                asperiores inventore veniam corporis.
-              </p>
+              <h2 class="fade-up">About Me</h2>
+              <p class="about-me"></p>
             </div>
           </div>
         </div>
@@ -245,12 +237,62 @@
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/TextPlugin.min.js"></script>
+    <script>
+      gsap.registerPlugin(TextPlugin);
+      gsap.to('.about-me', {
+        duration: 39,
+        delay: 1.5,
+        text: "Hi, I'm Agung Kurniawan, I'm 24 years old. I once worked as Curriculum, Administration and Operator in one of the educational institutions in Tangerang Regency. I have the ability to speak in public. I also have the character, diligent and like to learn new things.",
+      });
+
+      gsap.from('.navbar', {
+        opacity: 0,
+        y: -100,
+        duration: 1,
+      });
+
+      gsap.from('.hero-img', {
+        opacity: 0,
+        rotateY: 360,
+        duration: 3,
+      });
+
+      gsap.from('.myname', {
+        opacity: 0,
+        y: 100,
+        duration: 1,
+        delay: 0.5,
+      });
+      gsap.from('.profesi', {
+        opacity: 0,
+        y: 100,
+        duration: 1,
+        delay: 1,
+      });
+    </script>
+
+    <!-- AOS -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       const fadeUp = document.querySelectorAll('.fade-up');
 
       fadeUp.forEach((fade, i) => {
         fade.dataset.aos = 'fade-up';
+      });
+
+      AOS.init({
+        once: true,
+        duration: 2000,
+      });
+
+      const fadeDown = document.querySelectorAll('.fade-Down');
+
+      fadeUp.forEach((fade, i) => {
+        fade.dataset.aos = 'fade-down';
       });
 
       AOS.init({
