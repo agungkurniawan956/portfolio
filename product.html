@@ -21,7 +21,7 @@
       style="background-color: #322acc"
     >
       <div class="container">
-        <a class="navbar-brand" href="#">Agung Kurniawan</a>
+        <a class="navbar-brand" href="index.html">Agung Kurniawan</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -35,11 +35,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ms-auto">
-            <a class="nav-link active" aria-current="page" href="#">About Me</a>
+            <a class="nav-link" aria-current="page" href="index.html#about"
+              >About Me</a
+            >
             <a class="nav-link" href="#">Experience</a>
             <a class="nav-link" href="#">Project</a>
-            <a class="nav-link" href="#">Product</a>
-            <a class="nav-link" href="#contact">Contact</a>
+            <a class="nav-link active" href="#">Product</a>
+            <a class="nav-link" href="index.html#contact">Contact</a>
           </div>
         </div>
       </div>
@@ -47,7 +49,7 @@
     <!-- end navbar -->
 
     <main id="main">
-      <!-- Project -->
+      <!-- Product -->
       <section id="project">
         <div class="container my-5">
           <div class="row text-center">
@@ -57,56 +59,15 @@
           </div>
           <div class="row g-3">
             <div class="col-lg-4">
-              <div class="card fade-up">
+              <div class="card bg-primary fade-up" data-tilt>
                 <img
-                  src="/img/Black Simple Pizza Desktop Prototype.png"
+                  src="/img/Desain tanpa judul.png"
                   class="card-img-top p-3 rounded"
                   alt=""
                 />
                 <div class="card-body">
-                  <h5 class="card-title">School Web by Laravel</h5>
-                  <div class="card-text">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Accusantium reiciendis at praesentium saepe, perspiciatis
-                    itaque dolorum beatae obcaecati nam ea quasi magnam quaerat,
-                    tenetur velit.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="card fade-up">
-                <img
-                  src="/img/Black Simple Pizza Desktop Prototype.png"
-                  class="card-img-top p-3 rounded"
-                  alt=""
-                />
-                <div class="card-body">
-                  <h5 class="card-title">School Web by Laravel</h5>
-                  <div class="card-text">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Accusantium reiciendis at praesentium saepe, perspiciatis
-                    itaque dolorum beatae obcaecati nam ea quasi magnam quaerat,
-                    tenetur velit.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="card fade-up">
-                <img
-                  src="/img/Black Simple Pizza Desktop Prototype.png"
-                  class="card-img-top p-3 rounded"
-                  alt=""
-                />
-                <div class="card-body">
-                  <h5 class="card-title">School Web by Laravel</h5>
-                  <div class="card-text">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Accusantium reiciendis at praesentium saepe, perspiciatis
-                    itaque dolorum beatae obcaecati nam ea quasi magnam quaerat,
-                    tenetur velit.
-                  </div>
+                  <h5 class="card-title">Sepatu Compass</h5>
+                  <a href="" class="btn btn-success m-0">Tokopedia</a>
                 </div>
               </div>
             </div>
@@ -132,6 +93,9 @@
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
+
+    <!-- tilt JS -->
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
 
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
