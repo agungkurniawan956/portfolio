@@ -6,6 +6,10 @@
   background-size: cover;
   text-shadow: 2px 2px black;
 }
+
+.nav-sosmed {
+  height: 35px;
+}
 #about {
   padding: 8rem 2rem;
   background-color: #322acc;
@@ -19,34 +23,15 @@ footer {
 
 .btn-tokped {
   background-color: #03ac0e;
-  position: absolute;
-  bottom: 0;
-  left: 35%;
-  transform: translate(-50%, 0);
-  opacity: 0;
-  transition: 0.5s;
-}
-.card-product:hover .btn-tokped {
-  opacity: 1;
-  bottom: 20px;
 }
 .btn-tokped:hover {
   background-color: #05e414;
 }
 
 .btn-shopee {
-  background-color: #ee4d2d;
-  position: absolute;
-  bottom: 0;
-  left: 65%;
-  transform: translate(-50%, 0);
-  opacity: 0;
-  transition: 0.5s;
+  background-color: #ff370f;
 }
-.card-product:hover .btn-shopee {
-  opacity: 1;
-  bottom: 20px;
-}
+
 .btn-shopee:hover {
   background-color: #ff6633;
 }
